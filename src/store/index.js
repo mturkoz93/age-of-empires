@@ -1,8 +1,14 @@
+// store.ts
 import { createStore } from "vuex";
+import units from "../store/modules/units";
 
-export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+const store = createStore({
+  state: {
+    name: "Age of Empires",
+  },
+  modules: {
+    units,
+  },
 });
+
+export default store;

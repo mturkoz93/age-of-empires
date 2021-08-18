@@ -1,39 +1,41 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <Navbar />
   </div>
-  <div id="app">
+
+  <div class="main">
     <router-view />
   </div>
 </template>
 
+<script>
+import Navbar from "@/components/shared/Navbar";
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
+
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
 * {
+  font-family: "Alice", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+$background-color: #eee;
+$h-full: calc(100vh - 60px);
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-$background: rgb(194, 239, 247);
-$fullheight: 100vh;
-
-#app {
-  background: $background;
-  height: $fullheight;
+.main {
+  margin-top: 60px;
+  background: $background-color;
+  min-height: $h-full;
+  height: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 </style>

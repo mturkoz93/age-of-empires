@@ -1,17 +1,30 @@
 <template>
   <div class="home">
-    <TailwindExample msg="Welcome to Tailwindcss" />
+    <div id="wallpaper">
+      <img :src="require('@/assets/wallpaper.jpg')" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import TailwindExample from "@/components/TailwindExample.vue";
-
 export default {
   name: "Home",
-  components: {
-    TailwindExample,
-  },
 };
 </script>
+
+<style lang="scss">
+$hfull: calc(100vh - 60px);
+
+#wallpaper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $hfull;
+
+  img {
+    height: 360px;
+    width: 640px;
+    border-radius: 5px;
+  }
+}
+</style>
