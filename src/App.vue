@@ -27,7 +27,6 @@ export default {
 }
 
 $background-color: #eee;
-$h-full: calc(100vh - 60px);
 
 .main {
   margin-top: 60px;
