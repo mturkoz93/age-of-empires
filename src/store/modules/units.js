@@ -25,9 +25,9 @@ export default {
       if (age === "All") {
         const units = ageOfEmpires.units.filter(
           (unit) =>
-            (costs.Wood ? costs.Wood < +unit?.cost?.Wood : true) &&
-            (costs.Food ? costs.Food < +unit?.cost?.Food : true) &&
-            (costs.Gold ? costs.Gold < +unit?.cost?.Gold : true)
+            (costs?.Wood ? costs.Wood <= +unit?.cost?.Wood : true) &&
+            (costs?.Food ? costs.Food <= +unit?.cost?.Food : true) &&
+            (costs?.Gold ? costs.Gold <= +unit?.cost?.Gold : true)
         );
         commit("SET_UNITS", units);
         return true;
@@ -36,13 +36,18 @@ export default {
       const units = ageOfEmpires.units.filter(
         (unit) =>
           unit.age === age &&
-          (costs.Wood ? costs.Wood < +unit?.cost?.Wood : true) &&
-          (costs.Food ? costs.Food < +unit?.cost?.Food : true) &&
-          (costs.Gold ? costs.Gold < +unit?.cost?.Gold : true)
+          (costs?.Wood ? costs.Wood <= +unit?.cost?.Wood : true) &&
+          (costs?.Food ? costs.Food <= +unit?.cost?.Food : true) &&
+          (costs?.Gold ? costs.Gold <= +unit?.cost?.Gold : true)
       );
 
       commit("SET_UNITS", units);
       return true;
+    },
+    async listUnitDetails(context, unitId) {
+      const unit = ageOfEmpires.units.filter((unit) => unit.id === unitId)[0];
+
+      return unit;
     },
   },
 };
