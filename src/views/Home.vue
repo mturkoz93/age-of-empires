@@ -25,6 +25,14 @@ $hfull: calc(100vh - 60px);
     height: 360px;
     width: 640px;
     border-radius: 5px;
+    transition: all 700ms;
+    object-fit: cover;
+
+    &:hover {
+      height: 360px * (3/2);
+      width: 640px * (3/2);
+      transition: all 700ms;
+    }
   }
 }
 </style>

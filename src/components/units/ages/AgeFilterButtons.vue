@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import FilterButton from "@/components/units/FilterButton";
+import FilterButton from "@/components/units/ages/FilterButton";
 export default {
   components: {
     FilterButton,
@@ -64,13 +64,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-button {
-  font-weight: bold;
-  color: #2c3e50;
-
-  &.router-link-exact-active {
-    color: #42b983;
-  }
-}
-</style>
