@@ -2,13 +2,13 @@
   <div>
     <div>
       <div
-        class="mb-3 text-2xl"
+        class="unit-section-title mb-3 mt-6 text-2xl"
         style="display: flex; justify-content: flex-start"
       >
         Ages
       </div>
-      <div class="flex justify-center items-baseline flex-wrap">
-        <div class="flex">
+      <div class="flex justify-center items-baseline">
+        <div class="flex flex-wrap">
           <FilterButton
             v-for="button in filterButtons"
             :key="button"
