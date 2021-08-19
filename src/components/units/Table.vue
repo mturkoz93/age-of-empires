@@ -1,34 +1,57 @@
 <template>
-  <div style="display: flex; justify-content: center">
+  <div>
     <div id="tablebox">
-      <div>
-        <table style="width: 100%">
-          <thead>
-            <tr>
-              <th v-for="header in headers" :key="header">{{ header.text }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="unit in units" :key="unit">
-              <td>{{ unit.id }}</td>
-              <td id="unit-name">
-                <router-link :to="'/units/' + unit.id">
-                  <span>{{ unit.name }}</span>
-                </router-link>
-              </td>
-              <td>{{ unit.age }}</td>
-              <td>
-                <span v-for="(value, key, index) in unit.cost" :key="value">
-                  {{ key }}: {{ value }}
-                  <span v-if="index !== Object.keys(unit.cost).length - 1"
-                    >,
-                  </span>
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section class="container mx-auto font-mono">
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr
+                  class="
+                    text-md
+                    font-semibold
+                    tracking-wide
+                    text-center text-gray-900
+                    bg-gray-100
+                    uppercase
+                    border-b border-gray-600
+                  "
+                >
+                  <th class="px-4 py-3" v-for="header in headers" :key="header">
+                    {{ header.text }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white">
+                <tr class="text-gray-700" v-for="unit in units" :key="unit">
+                  <td class="px-4 py-3 text-ms font-semibold border">
+                    {{ unit.id }}
+                  </td>
+                  <td
+                    class="px-4 py-3 text-ms font-semibold border"
+                    id="unit-name"
+                  >
+                    <router-link :to="'/units/' + unit.id">
+                      <span>{{ unit.name }}</span>
+                    </router-link>
+                  </td>
+                  <td class="px-4 py-3 text-ms font-semibold border">
+                    {{ unit.age }}
+                  </td>
+                  <td class="px-4 py-3 text-ms font-semibold border">
+                    <span v-for="(value, key, index) in unit.cost" :key="value">
+                      {{ key }}: {{ value }}
+                      <span v-if="index !== Object.keys(unit.cost).length - 1"
+                        >,
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -54,20 +77,15 @@ export default {
 };
 </script>
 <style lang="scss">
-table,
+/* table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid gray;
   border-collapse: collapse;
-}
+} */
 
 #tablebox {
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 22px;
 
   table {
     thead > tr {
@@ -83,7 +101,6 @@ td {
   padding: 7px;
 
   span {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 3px 5px;
     border-radius: 3px;
 

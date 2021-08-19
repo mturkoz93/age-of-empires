@@ -1,91 +1,110 @@
 <template>
   <div style="display: flex; justify-content: center; flex-direction: column">
-    <div
-      class="unit-section-title mb-3 mt-6 text-2xl"
-      style="display: flex; justify-content: flex-start"
-    >
+    <div class="unit-section-title mb-3 mt-6 text-2xl flex flex-start">
       <b class="ml-2">{{ unit?.name || "Empty" }} Details</b>
     </div>
-    <div id="tablebox" v-if="unit">
-      <div>
-        <table style="width: 100%">
-          <tbody>
-            <tr>
-              <td>id</td>
-              <td>
-                <span>{{ unit.id }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Name</td>
-              <td>
-                <span>{{ unit.name }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Description</td>
-              <td>
-                <span>{{ unit.description || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Min. Requirement Age</td>
-              <td>
-                <span>{{ unit.age }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Wood Cost</td>
-              <td>
-                <span>{{ unit?.cost?.Wood || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Food Cost</td>
-              <td>
-                <span>{{ unit?.cost?.Food || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Gold Cost</td>
-              <td>
-                <span>{{ unit?.cost?.Gold || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Build Time</td>
-              <td>
-                <span>{{ unit.build_time || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Reload Time</td>
-              <td>
-                <span>{{ unit.reload_time || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Hit Points</td>
-              <td>
-                <span>{{ unit.hit_points || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Attack</td>
-              <td>
-                <span>{{ unit.attack || "-" }}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Accuracy</td>
-              <td>
-                <span>{{ unit.accuracy || "-" }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div
+      class="flex flex-start ml-2 text-2xl cursor-pointer"
+      @click="$router.back()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-arrow-left my-auto mr-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+        />
+      </svg>
+      <span class="text-xl my-2">Go Back</span>
     </div>
+
+    <section class="container mx-auto font-mono">
+      <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+        <div class="w-full overflow-x-auto">
+          <table class="w-full">
+            <tbody class="bg-white">
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">id</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.id }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Name</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.name }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Description</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.description || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Min. Requirement Age</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.age }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Wood Cost</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit?.cost?.Wood || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Food Cost</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit?.cost?.Food || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Gold Cost</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit?.cost?.Gold || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Build Time</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.build_time || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Reload Time</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.reload_time || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Hit Points</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.hit_points || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Attack</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.attack || "-" }}</span>
+                </td>
+              </tr>
+              <tr class="text-gray-700">
+                <td class="px-4 py-3 text-ms border">Accuracy</td>
+                <td class="px-4 py-3 text-ms font-semibold border">
+                  <span>{{ unit.accuracy || "-" }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -105,12 +124,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-table,
+/* table,
 th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
-}
+} */
 
 #tablebox {
   width: 100%;

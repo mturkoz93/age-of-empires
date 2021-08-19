@@ -8,7 +8,6 @@
       ></AgeFilterButtons>
 
       <CostFilterOptions
-        style="display: flex; justify-content: flex-start"
         class="mb-3"
         @changeRange="filterCost"
       ></CostFilterOptions>
