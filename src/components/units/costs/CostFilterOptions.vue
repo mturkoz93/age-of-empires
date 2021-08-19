@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="flex flex-col" style="width: 100%">
+    <div class="flex flex-col w-full overflow-x-auto">
       <div class="unit-section-title mt-6 text-2xl flex justify-start">
         Costs
       </div>
-      <div class="flex justify-start items-baseline flex-wrap">
+      <div class="flex justify-start items-baseline flex-wrap pl-2">
         <div class="flex flex-col items-start w-screen">
           <CostOption
             v-for="option in costOptions"
