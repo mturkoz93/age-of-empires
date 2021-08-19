@@ -23,7 +23,7 @@
   & a {
     float: left;
     display: block;
-    color: #0081fa;
+    color: $blue-dark;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -38,7 +38,7 @@
     }
 
     &.router-link-exact-active {
-      color: #79d889;
+      color: $active-link-color;
       text-decoration: underline;
     }
   }

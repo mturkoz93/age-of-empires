@@ -2,7 +2,6 @@
   <div>
     <button
       class="
-        text-base
         hover:scale-110
         focus:outline-none
         flex
@@ -10,10 +9,10 @@
         px-4
         py-2
         font-bold
+        text-xl
         cursor-pointer
         hover:bg-gray-200
         bg-gray-100
-        text-gray-700
         border
         duration-200
         ease-in-out
@@ -45,13 +44,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+button {
+  color: $blue;
+}
+
 .active {
-  background-color: rgb(0, 110, 255);
+  background-color: $blue;
   color: white;
 
   &:hover {
-    background-color: rgb(65, 141, 240);
+    background-color: $blue-light;
     transition: all 300ms;
   }
 }

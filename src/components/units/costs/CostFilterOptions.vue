@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="flex flex-col" style="width: 100%">
-      <div class="mb-3 text-2xl flex justify-start">Costs</div>
+      <div class="unit-section-title mt-6 text-2xl flex justify-start">
+        Costs
+      </div>
       <div class="flex justify-start items-baseline flex-wrap">
         <div class="flex flex-col items-start w-screen">
           <CostOption

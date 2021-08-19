@@ -13,7 +13,7 @@
         @changeRange="filterCost"
       ></CostFilterOptions>
 
-      <div class="mb-3 text-2xl flex justify-start">
+      <div class="unit-section-title mb-3 mt-6 text-2xl flex justify-start">
         Units({{ units.length }})
       </div>
 

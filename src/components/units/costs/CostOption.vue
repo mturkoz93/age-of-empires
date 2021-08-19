@@ -7,12 +7,13 @@
             v-model="checkCost"
             type="checkbox"
             class="form-checkbox h-5 w-5 text-orange-600"
-          /><span class="ml-2 text-gray-700">{{ text }}</span>
+          /><span class="ml-2 text-gray-700 text-xl">{{ text }}</span>
         </label>
       </div>
 
       <div style="flex: 1" class="flex justify-start mr-6">
         <input
+          class="slider"
           type="range"
           min="0"
           max="200"
