@@ -17,7 +17,7 @@
         Units({{ units.length }})
       </div>
 
-      <Table v-if="units && units.length" class="mb-3" :units="units" />
+      <Table v-show="units && units.length" class="mb-3" :units="units" />
     </div>
     <div
       v-if="units && units.length === 0 && loadingUnit === false"

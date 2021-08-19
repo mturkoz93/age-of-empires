@@ -10,11 +10,14 @@ const routes = [
   {
     path: "/units",
     name: "Units",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Units.vue"),
+      import(/* webpackChunkName: "units" */ "../views/Units.vue"),
+  },
+  {
+    path: "/units/:unit_id",
+    name: "Unit Detail",
+    component: () =>
+      import(/* webpackChunkName: "unit detail" */ "../views/UnitDetails.vue"),
   },
   {
     path: "/:catchAll(.*)",
@@ -27,6 +30,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.afterEach(() => {
+  window.scrollTo(0, 0);
 });
 
 export default router;
