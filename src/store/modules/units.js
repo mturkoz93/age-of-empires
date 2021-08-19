@@ -18,13 +18,24 @@ export default {
   },
 
   actions: {
-    async listUnits({ commit }, age) {
+    async listUnits({ commit }, payload) {
+      const age = payload.age;
+      const costs = payload.costs;
+
       if (age === "All") {
         commit("SET_UNITS", ageOfEmpires.units);
         return true;
       }
 
-      const units = ageOfEmpires.units.filter((unit) => unit.age === age);
+      const units = ageOfEmpires.units.filter(
+        (unit) =>
+          unit.age === age &&
+          (costs.Wood ? costs.Wood < +unit?.cost?.Wood : true) &&
+          (costs.Food ? costs.Food < +unit?.cost?.Food : true) &&
+          (costs.Gold ? costs.Gold < +unit?.cost?.Gold : true)
+      );
+      console.log(costs.Wood);
+
       commit("SET_UNITS", units);
       return true;
     },
