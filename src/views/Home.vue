@@ -13,13 +13,11 @@ export default {
 </script>
 
 <style lang="scss">
-$hfull: calc(100vh - 60px);
-
 #wallpaper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $hfull;
+  height: $h-full;
 
   img {
     height: 360px;
