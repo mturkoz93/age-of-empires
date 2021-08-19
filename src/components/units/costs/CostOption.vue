@@ -5,7 +5,6 @@
         <label id="check-box" class="inline-flex items-center my-3">
           <input
             v-model="checkCost"
-            :disabled="age === 'All'"
             type="checkbox"
             class="form-checkbox h-5 w-5 text-orange-600"
           /><span class="ml-2 text-gray-700">{{ text }}</span>
@@ -32,10 +31,6 @@
 <script>
 export default {
   props: {
-    age: {
-      type: String,
-      default: "All",
-    },
     text: {
       type: String,
       default: "",
@@ -52,11 +47,6 @@ export default {
     };
   },
   watch: {
-    age(val) {
-      if (val === "All") {
-        this.checkCost = false;
-      }
-    },
     rangeValue(val) {
       this.$emit("changeRange", {
         cost: this.value,

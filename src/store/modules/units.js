@@ -23,7 +23,13 @@ export default {
       const costs = payload.costs;
 
       if (age === "All") {
-        commit("SET_UNITS", ageOfEmpires.units);
+        const units = ageOfEmpires.units.filter(
+          (unit) =>
+            (costs.Wood ? costs.Wood < +unit?.cost?.Wood : true) &&
+            (costs.Food ? costs.Food < +unit?.cost?.Food : true) &&
+            (costs.Gold ? costs.Gold < +unit?.cost?.Gold : true)
+        );
+        commit("SET_UNITS", units);
         return true;
       }
 
@@ -34,7 +40,6 @@ export default {
           (costs.Food ? costs.Food < +unit?.cost?.Food : true) &&
           (costs.Gold ? costs.Gold < +unit?.cost?.Gold : true)
       );
-      console.log(costs.Wood);
 
       commit("SET_UNITS", units);
       return true;

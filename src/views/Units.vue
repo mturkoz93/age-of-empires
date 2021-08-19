@@ -11,22 +11,17 @@
         style="display: flex; justify-content: flex-start"
         class="mb-3"
         @changeRange="filterCost"
-        :age="selectedAge"
       ></CostFilterOptions>
 
       <div class="mb-3 text-2xl flex justify-start">
         Units({{ units.length }})
       </div>
 
-      <Table
-        v-show="units && units.length && !loadingUnit"
-        class="mb-3"
-        :units="units"
-      />
+      <Table v-if="units && units.length" class="mb-3" :units="units" />
     </div>
     <div
       v-if="units && units.length === 0 && loadingUnit === false"
-      style="font-size: 35px"
+      style="font-size: 22px"
     >
       No Unit!
     </div>
@@ -69,23 +64,19 @@ export default {
   methods: {
     listUnits(age, costs) {
       this.loadingUnit = true;
-      setTimeout(() => {
-        this.$store.dispatch("units/listUnits", { age, costs }).then(() => {
-          this.loadingUnit = false;
-        });
-      }, 500);
-    },
-    resetCosts() {
-      this.costFilters = {
-        Wood: 0,
-        Food: 0,
-        Gold: 0,
-      };
+      setTimeout(
+        function (scope) {
+          scope.$store
+            .dispatch("units/listUnits", { age, costs })
+            .finally(() => {
+              scope.loadingUnit = false;
+            });
+        },
+        500,
+        this
+      );
     },
     filterAge(age) {
-      if (age === "All") {
-        this.resetCosts();
-      }
       this.selectedAge = age;
       this.listUnits(
         this.selectedAge,
@@ -93,8 +84,6 @@ export default {
       );
     },
     filterCost(data) {
-      /* this.costFilters.filter((filter) => filter.title === data.cost)[0].value =
-        data.range; */
       this.costFilters[data.cost] = data.range;
       this.listUnits(
         this.selectedAge,

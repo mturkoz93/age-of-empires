@@ -10,7 +10,6 @@
             @changeRange="changeRange"
             :text="option.text"
             :value="option.value"
-            :age="age"
           ></CostOption>
         </div>
       </div>
@@ -21,12 +20,6 @@
 <script>
 import CostOption from "@/components/units/costs/CostOption";
 export default {
-  props: {
-    age: {
-      type: String,
-      default: "All",
-    },
-  },
   components: {
     CostOption,
   },
