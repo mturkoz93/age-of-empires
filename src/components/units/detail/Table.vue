@@ -123,36 +123,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-/* table,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-} */
-
-#tablebox {
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 22px;
-
-  table {
-    tbody > tr {
-      td:nth-child(2) {
-        font-weight: bold;
-        color: $blue;
-        padding: 7px;
-
-        span {
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          padding: 3px 5px;
-          border-radius: 3px;
-        }
-      }
-    }
-  }
-}
-</style>
