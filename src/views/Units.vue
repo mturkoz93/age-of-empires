@@ -35,7 +35,7 @@ import CostFilterOptions from "@/components/units/costs/CostFilterOptions.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "Home",
+  name: "Units",
   components: {
     Table,
     AgeFilterButtons,
