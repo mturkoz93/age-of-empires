@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100%">
     <div class="flex flex-wrap">
-      <div class="flex justify-start items-center mr-3 w-50">
+      <div class="flex w-24 justify-start items-center mr-3 w-50">
         <label id="check-box" class="inline-flex items-center my-3">
           <input
             v-model="checkCost"
@@ -11,7 +11,7 @@
         </label>
       </div>
       <!-- ... -->
-      <div class="flex justify-start items-center mr-6">
+      <div class="flex w-32 justify-start items-center mr-6">
         <input
           class="slider"
           type="range"
@@ -21,33 +21,7 @@
           v-model="rangeValue"
         />
       </div>
-      <div class="flex justify-start items-center">
-        <div style="font-size: 18px">{{ rangeValue }} - 200</div>
-      </div>
-    </div>
-    <div v-if="false" class="flex justify-start items-center">
-      <div class="flex justify-start mr-3 w-50 grid-cols-1">
-        <label id="check-box" class="inline-flex items-center my-3">
-          <input
-            v-model="checkCost"
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-orange-600"
-          /><span class="ml-2 text-gray-700 text-l">{{ text }}</span>
-        </label>
-      </div>
-
-      <div class="flex justify-start mr-6 grid-cols-1">
-        <input
-          class="slider"
-          type="range"
-          min="0"
-          max="200"
-          :disabled="!checkCost"
-          v-model="rangeValue"
-        />
-      </div>
-
-      <div class="flex justify-start grid-cols-9">
+      <div class="flex w-24 justify-start items-center">
         <div style="font-size: 18px">{{ rangeValue }} - 200</div>
       </div>
     </div>
